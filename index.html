@@ -52,6 +52,19 @@
       </div>
     </section>
 
+    <section class="section video-explainer">
+      <span class="eyebrow">Antes de continuar</span>
+      <h2 class="headline headline--section">Um recado rápido pra você</h2>
+
+      <div class="video-explainer__frame">
+        <video id="explainer-video" class="video-explainer__video" src="images/explainer.mp4" poster="images/explainer-poster.jpg" autoplay muted loop playsinline preload="metadata"></video>
+        <button id="explainer-mute-btn" class="video-explainer__mute" type="button" aria-label="Ativar som do vídeo" aria-pressed="false">
+          <svg class="icon-off" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="20" height="20" aria-hidden="true"><path d="M11 5 6 9H2v6h4l5 4V5Z"/><path d="M23 9l-6 6M17 9l6 6"/></svg>
+          <svg class="icon-on" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="20" height="20" aria-hidden="true" style="display:none"><path d="M11 5 6 9H2v6h4l5 4V5Z"/><path d="M15.5 8.5a5 5 0 0 1 0 7"/><path d="M18.5 6a9 9 0 0 1 0 12"/></svg>
+        </button>
+      </div>
+    </section>
+
     <section class="section method">
       <span class="eyebrow">O método</span>
       <h2 class="headline headline--section">O atalho definitivo para os seus personagens 3D</h2>
@@ -169,5 +182,21 @@
     </section>
 
   </div>
+
+  <script>
+    (function () {
+      var video = document.getElementById('explainer-video');
+      var btn = document.getElementById('explainer-mute-btn');
+      if (!video || !btn) return;
+      var iconOff = btn.querySelector('.icon-off');
+      var iconOn = btn.querySelector('.icon-on');
+      btn.addEventListener('click', function () {
+        video.muted = !video.muted;
+        btn.setAttribute('aria-pressed', String(!video.muted));
+        iconOff.style.display = video.muted ? '' : 'none';
+        iconOn.style.display = video.muted ? 'none' : '';
+      });
+    })();
+  </script>
 </body>
 </html>

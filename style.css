@@ -199,6 +199,44 @@ a {
   height: auto;
 }
 
+/* Video explainer */
+
+.video-explainer__frame {
+  position: relative;
+  margin: 1.5rem auto 0;
+  max-width: 300px;
+  aspect-ratio: 9 / 16;
+  border-radius: 20px;
+  overflow: hidden;
+  background: #000;
+  box-shadow: 0 16px 32px oklch(0 0 0 / 0.4);
+}
+
+.video-explainer__video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.video-explainer__mute {
+  position: absolute;
+  right: 12px;
+  bottom: 12px;
+  width: 40px;
+  height: 40px;
+  border: none;
+  border-radius: 50%;
+  background: oklch(0.16 0.025 250 / 0.55);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
 /* Method */
 
 .method__quote {
